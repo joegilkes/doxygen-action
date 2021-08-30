@@ -35,7 +35,7 @@ apk add $PACKAGES
 # set up doxypypy
 python3 -m ensurepip
 pip3 install --no-cache --upgrade pip setuptools wheel
-pip3 install doxypypy
+pip3 install --no-cache https://github.com/Feneric/doxypypy/archive/master.zip
 
 # run "regular" doxygen
 doxygen $1
