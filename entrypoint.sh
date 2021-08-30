@@ -33,8 +33,8 @@ fi
 apk add $PACKAGES
 
 # set up doxypypy
-pip3 install setuptools
-pip3 install wheel
+python3 -m ensurepip
+pip3 install --no-cache --upgrade pip setuptools wheel
 pip3 install doxypypy
 
 # run "regular" doxygen
