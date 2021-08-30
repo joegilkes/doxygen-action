@@ -26,11 +26,16 @@ else
   BUILD_LATEX=0
 fi
 
-PACKAGES="doxygen graphviz ttf-freefont $4"
+PACKAGES="doxygen python3 graphviz ttf-freefont $4"
 if [ "$BUILD_LATEX" = true ] ; then
   PACKAGES="$PACKAGES perl build-base texlive-full biblatex ghostscript"
 fi
 apk add $PACKAGES
+
+# set up doxypypy
+pip3 install setuptools
+pip3 install wheel
+pip3 install doxypypy
 
 # run "regular" doxygen
 doxygen $1
